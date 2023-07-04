@@ -1,39 +1,4 @@
-<?php
-$insert =false;
-   if(isset($_POST['name'])){
-      
-     $server = "localhost";
-     $username = "root";
-     $password = "";
 
-     //make connection variable
-     $con = mysqli_connect($server , $username , $password);
-     if(!$con)
-     {
-        die("Connection to this database failed due to  ".
-        mysqli_connect_error());
-     }
-     //else  echo"Success connection to database";
-
-     $name = $_POST['name'];
-     $gender = $_POST['gender'];
-     $age = $_POST['age'];
-     $email = $_POST['email'];
-     $phone = $_POST['phone'];
-     $desc = $_POST['desc'];
-     $sql="INSERT INTO `trip`.`trip` ( `name`, `gender`, `age`, `email`, `phone`, `other`, `dt`) VALUES ( '$name', '$gender', '$age', '$email', '$phone', '$desc', current_timestamp());";
-   //   echo $sql;
-
-     if($con->query($sql)==true){
-      // echo "succesfully executed";
-      $insert=true;
-     }else{
-       echo "ERROR: $sql <br> $con->error";
-     }
-
-     $con->close();
-   }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,3 +34,40 @@ $insert =false;
 </body>
 </html>
 
+
+<!-- <?php
+$insert =false;
+   if(isset($_POST['name'])){
+      
+     $server = "localhost";
+     $username = "root";
+     $password = "";
+
+     //make connection variable
+     $con = mysqli_connect($server , $username , $password);
+     if(!$con)
+     {
+        die("Connection to this database failed due to  ".
+        mysqli_connect_error());
+     }
+     //else  echo"Success connection to database";
+
+     $name = $_POST['name'];
+     $gender = $_POST['gender'];
+     $age = $_POST['age'];
+     $email = $_POST['email'];
+     $phone = $_POST['phone'];
+     $desc = $_POST['desc'];
+     $sql="INSERT INTO `trip`.`trip` ( `name`, `gender`, `age`, `email`, `phone`, `other`, `dt`) VALUES ( '$name', '$gender', '$age', '$email', '$phone', '$desc', current_timestamp());";
+   //   echo $sql;
+
+     if($con->query($sql)==true){
+      // echo "succesfully executed";
+      $insert=true;
+     }else{
+       echo "ERROR: $sql <br> $con->error";
+     }
+
+     $con->close();
+   }
+?> -->
